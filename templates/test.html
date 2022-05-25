@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Express HTML</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+      <script>
+        //this function simulates android client: sends http request to server to get the test payload
+        //this is for testing purposes only and should not be used, only added to try it this way
+        //use postman or route to check it in a less confusing way!
+           function prepareTestData(){
+               var xhttp = new XMLHttpRequest();
+               xhttp.onreadystatechange = function() {
+                   if (this.readyState == 4 && this.status == 200)
+                   {
+                       document.getElementById("my-demo").innerHTML = this.responseText;
+                    }
+                };
+              // xhttp.open('GET', '/getTest', true);
+              xhttp.open('GET', "http://127.0.0.1:3000/getTest", true);
+               xhttp.send();
+               console.log(this.responseText);
+           }
+      </script>
+</head>
+<body>
+  <div allign="center">
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1>running test</h1>
+    <!-- <button onclick="prepareTestData()">run test 1</button>-->
+    <h2><span id="my-demo"></span></h2>
+	<a href="./">back to app</a>
+ </body>
+</html>
