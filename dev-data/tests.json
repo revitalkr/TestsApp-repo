@@ -1,8 +1,29 @@
 [
   {
-    "id": 0,
-    "testName": "Test1",
-    "description": "This is a POC",
-    "param1": 1
+    "Get STB info": {
+      "function": {
+        "comment": "Get chip id and card id in out_params format - for information",
+        "out_params_format": {
+          "chip_id": "111122223333444455555666677778888",
+          "card_id": "1234567890"
+        }
+      }
+    }
+  },
+
+  {
+    "AuthorizeCard": {
+      "function": {
+        "comment": "AuthorizeCard",
+        "in_params": {
+          "param0": "<EMM_CLEAR_CARD_PAYLOAD>",
+          "param1": "<ECM",
+          "param2": "<EMM_AUTH1>",
+          "param3": "<ECM>",
+          "param4": "<EMM_AUTH2>",
+          "param5": "<EMM_AUTH3>"
+        }
+      }
+    }
   }
 ]
