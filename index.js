@@ -24,7 +24,7 @@ app.get('/test', (req, res) => {
 });
 
 app.get('/getTest', (req, res) => {
-  console.log('getTest');
+  console.log('getTest ');
   if (currentTest != null) {
     console.log('currentTest is not null!');
     res.status(200).send(currentTest);
